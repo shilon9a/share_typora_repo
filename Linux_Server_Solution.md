@@ -200,3 +200,10 @@ scp -r user@ipaddr:/yyy/yyy/yyy /xxx/xxx/xxx
 ssh-add [pub-key path]
 ```
 
+```sh
+# 端口转发（端口映射？）
+# 在服务器上运行的一些程序，需要访问特定的端口才能使用，但本地访问不到端口，这个时候我们可以使用端口转发来# # 将服务器上的某个端口运行的服务转发到本地指定的端口
+
+ssh -L [server_port]:127.0.0.1:[local_port] user@server_ip
+```
+
