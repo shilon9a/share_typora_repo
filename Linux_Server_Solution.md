@@ -26,6 +26,9 @@ sudo mount /dev/vdc ~/mount_file
 
 # 检查是否挂载成功
 df -h ~/mount_file
+
+# 卸载磁盘
+sudo umount ~/mount_file
 ```
 
 
@@ -137,6 +140,9 @@ conda activate [venv_name]
 # 推出虚拟环境
 conda deactivate
 
+# 删除虚拟环境
+conda remove -n [env_name] --all
+
 #每次进入终端的时候会默认进入conda的base环境，使用下面的命令取消这个的设置
 conda config --set auto_activate_base false
 
@@ -205,5 +211,17 @@ ssh-add [pub-key path]
 # 在服务器上运行的一些程序，需要访问特定的端口才能使用，但本地访问不到端口，这个时候我们可以使用端口转发来# # 将服务器上的某个端口运行的服务转发到本地指定的端口
 
 ssh -L [server_port]:127.0.0.1:[local_port] user@server_ip
+```
+
+
+
+> git
+
+```sh
+# 查看git config 文件位置
+git config --list --show-origin
+
+# 换源（可以选择命令行也可直接打开config文件手动换源）
+git config --global url."https://hub.fastgit.org/".insteadOf "https://github.com/"
 ```
 
