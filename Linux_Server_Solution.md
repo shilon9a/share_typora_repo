@@ -10,6 +10,12 @@ lsb_release -a
 
 
 
+> nvidia-smi  | nvcc --version  | pip show torch
+
+> 在这里我们有驱动版本，cuda版本，以及torch的版本，使用nvidia-smi可以获得驱动的一些信息，然后从这些信息中我们可以得知驱动（显卡）支持的cuda运行时支持的版本（这个很重要，因为无论你最后的代码运行都要取决与运行时的版本），然后通过nvcc --version可以得知你自己手动安装的cuda 的版本，这个被称为编译版本，一般来说编译版本都是向下兼容运行版本的，所以手动安装的cuda版本必须要高于nvidia-smi中的cuda版本，然后我们编代码使用的是torch，这个需要兼容的是运行时的cuda版本（这个很重要，运行项目是要安装的torch的版本以nvidia-smi查询到的gpu支持的cuda为支持版本）
+
+
+
 > 挂载磁盘
 
 ```sh
